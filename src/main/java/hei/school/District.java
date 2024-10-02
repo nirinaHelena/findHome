@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Builder
 public final class District extends Location{
     private List<Building> buildings;
     public District(String id, String name, List<Building> buildings) {
@@ -19,7 +18,7 @@ public final class District extends Location{
         this.buildings = buildings;
     }
 
-    public boolean isApartmentIsinDistrict(District district, Apartment apartment){
+    public static boolean isApartmentIsinDistrict(District district, Apartment apartment){
         List<Building> buildings = district.getBuildings();
         Location apartmentLocation = apartment.getLocation();
         if (district.equals(apartmentLocation)){
